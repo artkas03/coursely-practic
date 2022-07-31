@@ -12,10 +12,31 @@
     <title>Coursely</title>
 </head>
 <body>
-    <div class="preheader">
-        <div class="preheader__text">
-            <p>A Webflow template for video courses.</p>
-            <a href="#">See all templates ></a>
+    <div class="modal">
+        <div class="modal__content">
+            <div class="modal__quit" onclick="quitPopup()"></div>
+            <div class="modal__enroll modal-toggle">
+                <h2 class="modal__title">Enroll form</h2>
+                <form id="eroll__form">
+                    <div class="modal__personaldata">
+                        <input placeholder="Your name" required>
+                        <input placeholder="Your surname" required>
+                    </div>
+                    <input type="email" placeholder="E-mail" required>
+                    <div class="modal__buttons">
+                        <button type="button" class="modal__button cancelbutton" onclick="quitPopup()">Cancel</button>
+                        <button type="submit" class="modal__button sendbuton" onclick="enrollSubmit()">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal__trailer modal-toggle">
+                <h2 class="modal__title">Watch trailer</h2>
+                <div>
+                    <video muted autobuffer controls>
+                        <source src="video/trailer-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
     </div>
     <header class="header">
@@ -32,7 +53,7 @@
                     <p>LAUNCH A SUCCESSFUL PODCAST</p>
                 </div>
                 <div class="header__button">
-                    <button class="enrollbutton">
+                    <button class="enrollbutton call-modal formwindow">
                         <p>Enroll Now</p>
                     </button>
                 </div>
@@ -52,12 +73,12 @@
                         </div>
                         <div class="header__buttons">
                             <div class="header__button">
-                                <button class="cellbutton">
+                                <button class="cellbutton call-modal formwindow">
                                     <p>Enroll Now</p>
                                 </button>
                             </div>
                             <div class="header__watchbutton">
-                                <button class="trailerbutton">
+                                <button class="trailerbutton call-modal trailerwindow">
                                     <p class="watchtrailer">Watch Trailer</p>
                                 </button>
                             </div>
@@ -467,7 +488,7 @@
                         </p>
                     </div>
                     <div class="podcast__button">
-                        <button>
+                        <button class="call-modal formwindow">
                             <p>Get Access Now</p>
                         </button>
                     </div>
@@ -505,7 +526,7 @@
                         </p>
                     </div>
                     <div class="podcast__button">
-                        <button>
+                        <button class="call-modal formwindow">
                             <p>Get Access Now</p>
                         </button>
                     </div>
@@ -723,8 +744,8 @@
                 </p>
                 <div class="footer__author">
                     <p>
-                        Built by <a href="">Nikolai Bain</a>.
-                        Powered by <a href="">Webflow</a>.
+                        Built by <a href="#">Nikolai Bain</a>.
+                        Powered by <a href="#">Webflow</a>.
                     </p>
                 </div>
             </div>
@@ -732,21 +753,21 @@
                 <div class="footer__sitebar">
                     <h5 class="footer__subtitle">Site</h5>
                     <ul class="footer__list">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">FAQs</a></li>
-                        <li><a href="">Terms & Conditions</a></li>
-                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer__adminbar">
                     <h5 class="footer__subtitle">Admin</h5>
                     <ul class="footer__list">
-                        <li><a href="">Style Guide</a></li>
-                        <li><a href="">Licenses</a></li>
-                        <li><a href="">Instructions</a></li>
-                        <li><a href="">Password</a></li>
-                        <li><a href="">404</a></li>
+                        <li><a href="#">Style Guide</a></li>
+                        <li><a href="#">Licenses</a></li>
+                        <li><a href="#">Instructions</a></li>
+                        <li><a href="#">Password</a></li>
+                        <li><a href="#">404</a></li>
                     </ul>
                 </div>
             </div>

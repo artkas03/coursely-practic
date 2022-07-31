@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 h1, h2, h3, h4, h5, h6, a, p, s {
   font-family: "Inter", sans-serif;
   text-decoration: none;
@@ -12,36 +21,6 @@ h1, h2, h3, h4, h5, h6, a, p, s {
 
 img {
   width: 100%;
-}
-
-.preheader {
-  background: #EDEDED;
-  text-align: center;
-  padding: 12px 0;
-}
-.preheader__text {
-  margin: 0 auto;
-  display: flex;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  gap: 10px;
-  font-size: 14px;
-  line-height: 18px;
-}
-.preheader__text a {
-  color: #D87775;
-}
-.preheader__text a:hover {
-  color: #c96a69;
-}
-.preheader__text P {
-  line-height: 20px;
-}
-@media (max-width: 581px) {
-  .preheader__text {
-    display: block;
-  }
 }
 
 .enrollbutton {
@@ -237,6 +216,196 @@ img {
 @media (max-width: 817px) and (min-width: 802px) {
   .student-lifted {
     margin-top: -16px !important;
+  }
+}
+
+.cancelbutton {
+  margin: 0 0 0 auto;
+  color: #757575;
+  transition-duration: all 0.3;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+}
+.cancelbutton:hover {
+  background: grey;
+  color: white;
+}
+
+.sendbuton {
+  margin: 0 auto 0 0;
+  color: white;
+  background-color: #017CFF;
+  transition-duration: all 0.3;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+}
+.sendbuton:hover {
+  transition-duration: all 0.3;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  background-color: white;
+  color: #017CFF;
+}
+
+.modal {
+  position: absolute;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-height: 1080px;
+  z-index: 1;
+  display: none;
+  opacity: 0;
+  transition-duration: all 0.3;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+}
+.modal__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+}
+@media (max-width: 671px) {
+  .modal__content {
+    padding: 20px;
+  }
+}
+@media (max-width: 509px) {
+  .modal__content {
+    padding: 10px;
+  }
+}
+.modal__title {
+  margin-bottom: 20px;
+}
+@media (max-width: 493px) {
+  .modal__title {
+    font-size: 24px;
+  }
+}
+.modal__personaldata {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 389px) {
+  .modal__personaldata {
+    display: block;
+  }
+}
+.modal__button {
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.modal__button:active {
+  transform: scale(0.9);
+}
+.modal input {
+  background-color: rgba(128, 128, 128, 0.15);
+  border: 1px solid grey;
+  border-radius: 2px;
+  height: 25px;
+  padding: 0 0 0 5px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+@media (max-width: 577px) {
+  .modal input {
+    width: 180px;
+  }
+}
+@media (max-width: 493px) {
+  .modal input {
+    width: 140px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 389px) {
+  .modal input {
+    width: 200px;
+  }
+}
+@media (max-width: 301px) {
+  .modal input {
+    width: 150px;
+  }
+}
+.modal__buttons {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+.modal__quit::before, .modal__quit::after {
+  content: "";
+  cursor: pointer;
+  width: 20px;
+  height: 2.5px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  right: 15px;
+  border-radius: 2px;
+  background: rgb(0, 0, 0);
+  transition-duration: all 0.3;
+  -webkit-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+}
+.modal__quit::before {
+  transform: rotate(45deg);
+}
+.modal__quit::after {
+  transform: rotate(-45deg);
+}
+.modal__trailer video {
+  width: 640px;
+}
+@media (max-width: 747px) {
+  .modal__trailer video {
+    width: 600px;
+  }
+}
+@media (max-width: 701px) {
+  .modal__trailer video {
+    width: 540px;
+  }
+}
+@media (max-width: 671px) {
+  .modal__trailer video {
+    width: 480px;
+  }
+}
+@media (max-width: 573px) {
+  .modal__trailer video {
+    width: 420px;
+  }
+}
+@media (max-width: 509px) {
+  .modal__trailer video {
+    width: 360px;
+  }
+}
+@media (max-width: 447px) {
+  .modal__trailer video {
+    width: 300px;
+  }
+}
+@media (max-width: 349px) {
+  .modal__trailer video {
+    width: 240px;
   }
 }
 
